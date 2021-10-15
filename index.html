@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Calories</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Calories Control</h1>
+        <div class="selectPlusTotal">
+            <select class="select-product" name="Calorias" v-model= "selectedProduct" @change="updateTotalCalories">
+                <option v-for="(elem, index) in products" :value="index">{{ elem.product }}</option>
+            </select>
+            <div class="total">
+                TOTAL: {{ totalCalories }} 
+            </div>
+        </div>
+        <div class="buttons">
+            <button @click="addProduct">AGREGAR PRODUCTO</button>
+            <button @click="deleteProduct">ELIMINAR PRODUCTO</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+</body>
+</html>
